@@ -1,0 +1,7 @@
+#!/bin/bash
+set -ueo pipefail
+echo "Running assemble"
+cd /tmp/src
+javac TestJdkTlsDisabledAlgortihms.java
+java TestJdkTlsDisabledAlgortihms # run this so S2I build logs contain the output
+jar cfe /deployments/TestJdkTlsDisabledAlgortihms.jar TestJdkTlsDisabledAlgortihms TestJdkTlsDisabledAlgortihms.class
